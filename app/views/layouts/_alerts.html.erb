@@ -1,0 +1,17 @@
+   <%if alert%>
+   <div class="container d-flex justify-content-end">
+     <div class="mt-3 alert alert-warning alert-dismissible fade show" role="alert">
+       <strong class="mx-5"><%= alert %></strong>
+       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+     </div>
+   </div>
+   <%end%>
+
+   <%if notice%>
+   <div class="container d-flex justify-content-end">
+     <div class="mt-3 alert alert-success alert-dismissible fade show" role="alert">
+       <strong class="mx-5"><%= notice %></strong>
+       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+     </div>
+   </div>
+   <%end%>

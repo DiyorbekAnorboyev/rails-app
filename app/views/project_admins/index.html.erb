@@ -1,0 +1,14 @@
+<nav class="navbar bg-info" data-bs-theme="info">
+  <h1 style="color:white;">Admin Projects</h1>
+</nav>
+
+<div id="projects">
+  <div class="container row">
+    <% @projects.each do |project| %>
+    <h1><%= project.project.name %></h1> <br>
+    <% end %>
+  </div>
+</div>
+
+
+<%= link_to '<- BACK', root_path, class: "text-dark"%>

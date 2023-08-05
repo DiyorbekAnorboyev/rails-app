@@ -1,0 +1,14 @@
+<div class="card mt-3 mx-3 w-50">
+  <div class="card-body">
+    <h5 class="card-title text-center"><strong><%= project.name %></strong></h5>
+    <p class="card-text bg-light border border-light"><%= project.body %></p>
+    <div class="d-flex justify-content-between">
+      <div>
+        <%= link_to "Show this project", project, class:'btn btn-primary' %>
+      </div>
+      <div>
+        <h5 class="text-end"><strong>Created:</strong> <%= current_user.email%></h5>
+      </div>
+    </div>
+  </div>
+</div>

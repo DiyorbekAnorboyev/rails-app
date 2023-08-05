@@ -1,0 +1,29 @@
+<div class="d-flex mt-5 justify-content-center">
+  <img class="w-25"
+    src="https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/advisor/wp-content/uploads/2022/06/image-removebg-preview.png">
+</div>
+<h1 class=" text-center">Sign Up</h1>
+<div class="container w-25">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="mb-1">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control p-2" %>
+  </div>
+  <div class="mb-1">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", class: "form-control p-2" %>
+  </div>
+  <div class="mb-1">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control p-2" %>
+  </div>
+  <div class="my-3 d-flex justify-content-center"><br>
+    <button type="submit" class="btn btn-primary btn-block btn-large"><%= "Sign up" %></button>
+  </div>
+  <p class="d-flex justify-content-start">Already have an account? <%= render "devise/shared/links" %> </p>
+  <% end %>
+</div>

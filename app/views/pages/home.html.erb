@@ -1,0 +1,22 @@
+<nav class="navbar bg-info  " data-bs-theme="dark">
+  <div class="container">
+    <h5 class="text-light"><%= current_user.email%></h5>
+    <div>
+      <%= link_to 'New Project', new_project_path, style: 'text-decoration: none;', class: 'btn btn-success' %>
+      <%= link_to 'Projects', projects_path, style: 'text-decoration: none;', class: 'btn btn-warning' %>
+      <%= link_to 'Admin Projects', admin_projects_path, class: 'btn btn-primary' %>
+    </div>
+    <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-danger', id: 'aliceblue' %>
+  </div>
+</nav>
+
+
+<div class="container mt-2">
+  <% if @projects %>
+  <% @projects.each do |project| %>
+  <%= render project %>
+  <% end %>
+
+  <% end %>
+
+</div>

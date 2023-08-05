@@ -1,0 +1,24 @@
+<div class="container mt-5">
+  <%= form_with model: project do |form| %>
+  <div class="text-center mt-3">
+    <%= form.label :name, class:"fs-2" %><br>
+    <%= form.text_field :name, class:"w-25 border rounded-3 border-5 " %>
+    <% project.errors.full_messages_for(:name).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="text-center mt-3">
+    <%= form.label :body, class:"fs-2"  %><br>
+    <%= form.text_area :body, class:"w-25 border rounded-3 border-5 " %><br>
+    <% project.errors.full_messages_for(:body).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="text-center mt-3 ">
+    <%=  form.submit "New Project", class: "text-light btn btn-info w-25" %>
+  </div>
+  <% end %>
+
+</div>

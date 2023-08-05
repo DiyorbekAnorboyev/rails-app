@@ -1,0 +1,23 @@
+<%= link_to "Back to projects", projects_path, class:'btn btn-primary mt-3' %>
+<div class="card mt-3 mx-3 w-50">
+  <div class="card-body">
+    <h5 class="card-title text-center"><strong><%= @project.name %></strong></h5>
+    <p class="card-text bg-light border border-light"><%= @project.body %></p>
+    <div class="d-flex justify-content-between">
+      <div>
+        <h5 class="text-end"><strong>Created:</strong> <%= current_user.email%></h5>
+      </div>
+      <% if current_user == @project.user %>
+      <div>
+        <%= link_to "Edit this project", edit_project_path(@project), class:'btn btn-primary' %>
+      </div>
+      <div>
+        <%= button_to "Destroy this project", @project, method: :delete , class:'btn btn-danger'%>
+      </div>
+      <div>
+        <%= link_to 'Add Admin', new_project_project_admin_path(@project), class:"btn btn-success" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

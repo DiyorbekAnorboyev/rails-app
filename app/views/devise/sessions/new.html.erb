@@ -1,0 +1,21 @@
+<div class="d-flex mt-5 justify-content-center">
+  <img class="w-25"
+    src="https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/advisor/wp-content/uploads/2022/06/image-removebg-preview.png">
+</div>
+<h1 class="text-center">Sign In</h1>
+<div class="container w-25">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="mb-1">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control p-2" %>
+  </div>
+  <div class="mb-1">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password", class: "form-control p-2" %>
+  </div>
+  <div class="mb-1 d-flex justify-content-center"><br>
+    <button type="submit" class="btn btn-primary btn-block btn-large"><%= "Log in" %></button>
+  </div>
+  <p class="d-flex justify-content-start">Already have an account? <%= render "devise/shared/links" %> </p>
+  <% end %>
+</div>

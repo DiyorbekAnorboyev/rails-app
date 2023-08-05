@@ -1,0 +1,12 @@
+<div class="w-100 navbar bg-info">
+  <nav class="container navbar bg-info">
+    <h1 style="color:white;">Projects</h1>
+    <%= link_to "New project", new_project_path, class:'btn btn-warning' %>
+  </nav>
+</div>
+<%= link_to 'Back to projects', root_path, class: "btn btn-primary mt-3"%>
+<div class="container row">
+  <% @projects.each do |project| %>
+  <%= render project %>
+  <% end %>
+</div>
